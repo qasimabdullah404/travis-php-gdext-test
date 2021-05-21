@@ -6,4 +6,5 @@ php:
 before_install:
   - sudo apt-get install php7.4-gd
   - sudo apt-get install -y mysql-server
-script: true
+script:
+  - mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
