@@ -11,13 +11,9 @@ services:
   - mysql
 addons:
   chrome: stable
-stages:
-  - name: main
-    if: branch = main
-    script: echo "in main"
-  - name: test-branch-🔥
-    if: branch = test-branch-🔥
-    script: echo "in test-branch-🔥"
+deploy:
+  on:
+    branch: test-branch-🔥
 #script:
 #  - mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 #  - echo "Unicode Tested.."
